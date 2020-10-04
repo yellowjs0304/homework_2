@@ -59,6 +59,7 @@ From (https://github.com/david8862/keras-YOLOv3-model-set)
   ```
   
 3. Annotation 실행하여 본인 경로에 맞는 데이터 셋 설정
+
   ```
   python misaeng_annotation.py
   ```
@@ -66,13 +67,16 @@ From (https://github.com/david8862/keras-YOLOv3-model-set)
   : trainval_misaeng.txt / test_misaeng.txt
   
 4. 학습진행
+
   ```
   python train.py --model_type=yolo3_mobilenet_lite --anchors_path=configs/yolo3_anchors.txt --annotation_file=trainval_misaeng.txt --classes_path=configs/misaeng_classes.txt --eval_online --save_eval_checkpoint --val_annotation_file=test_misaeng.txt
   ```
 5. 성능 확인   
+
   "--val_annotation_file" 옵션으로 테스트 데이터를 제공한 경우, 자동으로 학습이 끝난 후 네트워크 평가 진행
   
 6. Tensorboard 확인   
+
    학습 과정 중 일어난 Loss변화 또는 학습 변화를 확인하고 싶을 때는 results/classes폴더 내의 이미지, html파일을 확인할수 있으며,
    logs/000/train(validation)폴더 안에 있는 tensorboard 파일로 변화율을 확인할 수 있음
    ```
