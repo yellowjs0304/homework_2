@@ -9,9 +9,9 @@ __1. 필요 라이브러리 설치__
 ```
 pip install -r requirements.txt
 ```
-__2. 학습 데이터 다운로드__  
+__2. 학습 데이터 다운로드__   
 
-[추후 수정]
+다운로드 링크(https://drive.google.com/file/d/1lHP_92tj3pkonEoxwvqD_am7XsePbSl4/view?usp=sharing)   
 
 - xml, img 리스트 파일 생성
 ```
