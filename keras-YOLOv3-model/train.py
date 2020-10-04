@@ -245,7 +245,7 @@ if __name__ == '__main__':
 
     # Training options
     # 학습 파라미터 설정
-    # : 컴퓨터 사양이 매우 낮다는 가정하에 설정해놓은 파라미터이므로, 본인 학습하실 때 더 늘리거나 조정 가능.
+    # : 컴퓨터 사양이 매우 낮다는 가정하에 설정해놓은 파라미터이므로, 본인 컴퓨터 사양에  더 늘리거나 조정 가능.
     parser.add_argument('--batch_size', type=int, required=False, default=16,
         help = "Batch size for train, default=%(default)s")
     parser.add_argument('--optimizer', type=str, required=False, default='sgd', choices=['adam', 'rmsprop', 'sgd'],
