@@ -36,8 +36,8 @@ test_path = "[본인 경로에 맞도록 수정(절대경로)]\\data\\test_filel
 
 ## YOLO requirement
 From (https://github.com/david8862/keras-YOLOv3-model-set)
-1. YOLO v3 weight(컴퓨터 사양에 따라 YOLOv3-Tiny도 가능) 다운로드
-2. Darknet YOLO 모델을 Keras모델로 변경
+__1. YOLO v3 weight(컴퓨터 사양에 따라 YOLOv3-Tiny도 가능) 다운로드__
+__2. Darknet YOLO 모델을 Keras모델로 변경__
 
   ```
   //Ubuntu   
@@ -57,7 +57,7 @@ From (https://github.com/david8862/keras-YOLOv3-model-set)
   
   ```
   
-3. Annotation 실행하여 본인 경로에 맞는 데이터 셋 설정
+__3. Annotation 실행하여 본인 경로에 맞는 데이터 셋 설정__
 
   ```
   python misaeng_annotation.py
@@ -65,16 +65,16 @@ From (https://github.com/david8862/keras-YOLOv3-model-set)
   [filepath,x1,y1,x2,y2,class_id]형태로 두 가지 파일을 생성   
   : trainval_misaeng.txt / test_misaeng.txt
   
-4. 학습진행
+__4. 학습진행__
 
   ```
   python train.py --model_type=yolo3_mobilenet_lite --anchors_path=configs/yolo3_anchors.txt --annotation_file=trainval_misaeng.txt --classes_path=configs/misaeng_classes.txt --eval_online --save_eval_checkpoint --val_annotation_file=test_misaeng.txt
   ```
-5. 성능 확인   
+__5. 성능 확인__   
 
   "--val_annotation_file" 옵션으로 테스트 데이터를 제공한 경우, 자동으로 학습이 끝난 후 네트워크 평가 진행
   
-6. Tensorboard 확인   
+__6. Tensorboard 확인__   
 
    학습 과정 중 일어난 Loss변화 또는 학습 변화를 확인하고 싶을 때는 results/classes폴더 내의 이미지, html파일을 확인할수 있으며,
    logs/000/train(validation)폴더 안에 있는 tensorboard 파일로 변화율을 확인할 수 있음
@@ -88,7 +88,7 @@ From (https://github.com/david8862/keras-YOLOv3-model-set)
 ## Faster RCNN
 From (https://github.com/kbardool/keras-frcnn)
 
-1. Annotation 실행하여 본인 경로에 맞는 데이터 셋 설정(YOLO와 형식이 다르므로 한번 더 수행)   
+__1. Annotation 실행하여 본인 경로에 맞는 데이터 셋 설정(YOLO와 형식이 다르므로 한번 더 수행)__   
 
    ```
    python misaeng_annotation.py
@@ -97,20 +97,20 @@ From (https://github.com/kbardool/keras-frcnn)
    [filepath,x1,y1,x2,y2,class_name]형태로 두 가지 파일을 생성
    trainval_misaeng.txt / test_misaeng.txt 파일을 생성 
 
-2. 학습   
+__2. 학습__   
 
    ```
    python train_frcnn.py -p trainval_misaeng.txt
    ```
 
-3. 평가   
+__3. 평가__   
 
    ```
    python measure_map.py -o simple -p [TEST데이터]
    ex) python measure_map.py -o simple -p test_misaeng.txt
    ```
 
-4. Tensorboard 확인   
+__4. Tensorboard 확인__   
    학습 과정 중 일어난 Loss변화를 확인하고 싶을 때는 logs/frcnn 폴더 안에 있는 tensorboard 파일로 변화율을 확인할 수 있음
    ```
    tensorboard --logdir=logs/frcnn
