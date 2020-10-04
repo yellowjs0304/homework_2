@@ -24,17 +24,17 @@ parser = OptionParser()
 parser.add_option("-p", "--path", dest="train_path", help="Path to training data.")
 parser.add_option("-o", "--parser", dest="parser", help="Parser to use. One of simple or pascal_voc",
 				default="pascal_voc")
-parser.add_option("-n", "--num_rois", dest="num_rois", help="Number of RoIs to process at once.", default=20)#32
+parser.add_option("-n", "--num_rois", dest="num_rois", help="Number of RoIs to process at once. ROI값 조절 Default값은 32었음.", default=20)
 parser.add_option("--network", dest="network", help="Base network to use. Supports vgg or resnet50.", default='resnet50')
 parser.add_option("--hf", dest="horizontal_flips", help="Augment with horizontal flips in training. (Default=false).", action="store_true", default=False)
 parser.add_option("--vf", dest="vertical_flips", help="Augment with vertical flips in training. (Default=false).", action="store_true", default=False)
 parser.add_option("--rot", "--rot_90", dest="rot_90", help="Augment with 90 degree rotations in training. (Default=false).",
 				  action="store_true", default=False)
-parser.add_option("--num_epochs", dest="num_epochs", help="Number of epochs.", default=300)#2000
+parser.add_option("--num_epochs", dest="num_epochs", help="Number of epochs. Default값은 2000이었음", default=300)
 parser.add_option("--config_filename", dest="config_filename", help=
 				"Location to store all the metadata related to the training (to be used when testing).",
 				default="config.pickle")
-parser.add_option("--output_weight_path", dest="output_weight_path", help="Output path for weights.", default='./misaeng.hdf5')
+parser.add_option("--output_weight_path", dest="output_weight_path", help="Output path for weights. 저장될 hdf5파일 이름", default='./misaeng.hdf5')
 parser.add_option("--input_weight_path", dest="input_weight_path", help="Input path for weights. If not specified, will try to load default weights provided by keras.")
 
 (options, args) = parser.parse_args()
@@ -174,6 +174,7 @@ print('Starting training')
 
 vis = True
 
+#Epoch 기준 학습 진행
 for epoch_num in range(num_epochs):
 
 	progbar = generic_utils.Progbar(epoch_length)
@@ -190,7 +191,8 @@ for epoch_num in range(num_epochs):
 					print('RPN is not producing bounding boxes that overlap the ground truth boxes. Check RPN settings or keep training.')
 
 			X, Y, img_data = next(data_gen_train)
-
+			
+			#RPN모델 학습
 			loss_rpn = model_rpn.train_on_batch(X, Y)
 
 			P_rpn = model_rpn.predict_on_batch(X)
@@ -239,7 +241,7 @@ for epoch_num in range(num_epochs):
 					sel_samples = random.choice(neg_samples)
 				else:
 					sel_samples = random.choice(pos_samples)
-
+			# Classification 모델 학습
 			loss_class = model_classifier.train_on_batch([X, X2[:, sel_samples, :]], [Y1[:, sel_samples, :], Y2[:, sel_samples, :]])
 
 
