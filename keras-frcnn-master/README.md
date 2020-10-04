@@ -1,6 +1,6 @@
 # keras-frcnn
 Keras implementation of Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks.
-https://github.com/inspace4u/keras-frcnn
+
 
 USAGE:
 - Both theano and tensorflow backends are supported. However compile times are very high in theano, and tensorflow is highly recommended.
