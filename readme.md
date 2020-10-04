@@ -35,7 +35,8 @@ test_path = "[본인 경로에 맞도록 수정(절대경로)]\\data\\test_filel
 - __각 모델 별 설정된 하이퍼 파라미터는 테스트 용으로 기입된 숫자이며, 절대 잘 되는 모델을 위한 하이퍼 파라미터가 아닙니다.본인 컴퓨터 사양에 맞춰 여러 번 실험해보고 최고의 성능을 내는 하이퍼 파라미터를 결정한 후, 실험에 사용하시기 바랍니다.__
 
 ## YOLO requirement
-From (https://github.com/david8862/keras-YOLOv3-model-set)
+From (https://github.com/david8862/keras-YOLOv3-model-set)   
+
 __1. YOLO v3 weight(컴퓨터 사양에 따라 YOLOv3-Tiny도 가능) 다운로드__
 __2. Darknet YOLO 모델을 Keras모델로 변경__
 
