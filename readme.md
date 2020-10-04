@@ -96,7 +96,6 @@ From (https://github.com/kbardool/keras-frcnn)
 
    ```
    python train_frcnn.py -p trainval_misaeng.txt
-
    ```
 
 3. 평가   
