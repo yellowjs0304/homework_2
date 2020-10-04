@@ -21,7 +21,7 @@ __2. 학습 데이터 다운로드__
 test_img_filelist.txt / test_xml_filelist.txt/trainval_img_filelist.txt / trainval_xml_filelist.txt   
 총 4개의 파일이 생성됐는지 확인
 
-__3. 수정해야 하는 경로 파일들__
+__3. 수정해야 하는 파일들__
 
 __[Faster RCNN / YOLO 공통]__
 
@@ -32,6 +32,8 @@ imgsets_path_trainval = "[본인 경로에 맞도록 수정(절대경로)]\\data
 imgsets_path_test = "[본인 경로에 맞도록 수정(절대경로)]\\data\\test_img"
 test_path = "[본인 경로에 맞도록 수정(절대경로)]\\data\\test_filelist.txt"
 ```
+- __각 모델 별 설정된 하이퍼 파라미터는 테스트 용으로 기입된 숫자이며, 절대 잘 되는 모델을 위한 하이퍼 파라미터가 아닙니다.__   
+  __본인 컴퓨터 사양에 맞춰 여러 번 실험해보고 최고의 성능을 내는 하이퍼 파라미터를 결정한 후, 실험에 사용하시기 바랍니다.__
 
 ## YOLO requirement
 From (https://github.com/david8862/keras-YOLOv3-model-set)
