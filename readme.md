@@ -24,6 +24,7 @@ test_img_filelist.txt / test_xml_filelist.txt/trainval_img_filelist.txt / trainv
 __3. 수정해야 하는 파일들__
 
 __[Faster RCNN / YOLO 공통]__
+- __경로 설정 시, Window는 "//" 를 Ubuntu에서는 "\"를 유의해서 사용해주세요.__
 
 - ./misaeng_annotation.py 9-13라인 수정
 ```
