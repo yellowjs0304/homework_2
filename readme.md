@@ -113,6 +113,14 @@ __3. 평가__
    ```
 - __결과물이 나오지 않는 경우(모델이 인물 탐지를 전혀 하지 못하는 경우)는 충분히 학습 되지 않은 모델입니다.__   
 - __rpn_cls 나 detector_cls 의 loss가 1 이상일 경우, Loss가 너무 높은 모델입니다. 조금 더 훈련을 진행하셔야 합니다.__
+![error](https://user-images.githubusercontent.com/30281608/95056881-502ec880-0730-11eb-9f24-98f3dc163036.png)
+다음과 같이 AP값이 1.0이 나올 경우, 모델이 제대로 된 탐지를 전혀 하지 못하는 경우를 의미합니다.
+
+만약, mAP계산 외에 추가적으로 실제 모델의 탐지 결과를 확인하고 싶을 땐
+```
+python test_frcnn.py -p [절대경로]/test_img
+```
+다음 명령어를 통해 실제 Visualize한 탐지 결과(results_imgs 내 이미지)를 얻으실 수 있습니다.
 
 __4. Tensorboard 확인__   
    학습 과정 중 일어난 Loss변화를 확인하고 싶을 때는 logs/frcnn 폴더 안에 있는 tensorboard 파일로 변화율을 확인할 수 있음
