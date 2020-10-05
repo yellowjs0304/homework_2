@@ -111,6 +111,8 @@ __3. 평가__
    python measure_map.py -o simple -p [TEST데이터]
    ex) python measure_map.py -o simple -p test_misaeng.txt
    ```
+- __결과물이 나오지 않는 경우(모델이 인물 탐지를 전혀 하지 못하는 경우)는 충분히 학습 되지 않은 모델입니다.__   
+- __rpn_cls 나 detector_cls 의 loss가 1 이상일 경우, Loss가 너무 높은 모델입니다. 조금 더 훈련을 진행하셔야 합니다.__
 
 __4. Tensorboard 확인__   
    학습 과정 중 일어난 Loss변화를 확인하고 싶을 때는 logs/frcnn 폴더 안에 있는 tensorboard 파일로 변화율을 확인할 수 있음
