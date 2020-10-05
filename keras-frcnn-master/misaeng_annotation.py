@@ -49,7 +49,7 @@ def convert_annotation(TYPE):
             if type(test)=='Nonetype':
                 print(img_file)
             b = (int(xmlbox.find('xmin').text), int(xmlbox.find('ymin').text), int(xmlbox.find('xmax').text), int(xmlbox.find('ymax').text))
-            list_file.write(" " + ",".join([str(a) for a in b]) + ',' + str(cls_id))
+            list_file.write(" " + ",".join([str(a) for a in b]) + ',' + str(cls))
             list_file.write('\n')
     list_file.close()
 
