@@ -43,7 +43,7 @@ def convert_annotation(TYPE):
                 continue
             cls_id = classes.index(cls)
             xmlbox = obj.find('bndbox')
-            list_file.write(os.path.join(imgsets_path, line.split('/')[-1][:-4]+"jpg"))
+            list_file.write(os.path.join(imgsets_path, line.split('/')[-1][:-4]+"jpg ,"))
             img_file = os.path.join(imgsets_path, line.split('/')[-1][:-4]+"jpg")
             test = cv2.imread(img_file)
             if type(test)=='Nonetype':
