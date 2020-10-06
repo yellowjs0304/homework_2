@@ -5,12 +5,12 @@ __수정된 코드가 있으므로, LMS에서 다운받은 코드가 아닌 GitH
 
 # requirement
 
-__0. 파이참 로딩__   
+### __0. 파이참 로딩__ ###   
 파이참 로딩 때 간혹 빈 프로젝트를 생성하고, 코드를 엎어씌우는 과정에서 오류가 나시는 분들이 있습니다.
 프로젝트를 따로 만들지 않고, Pycharm > File > Open 탭으로 프로젝트를 열거나 터미널 상에서 접근하시면 큰 오류가 없을 것 같습니다.
 
 
-__1. 필요 라이브러리 설치__   
+### __1. 필요 라이브러리 설치__ ###   
 ( YOLO와 Faster RCNN이 서로 다른 Tensorflow버전 상에 동작하므로 
 각기 다른 conda 환경을 만들어 동작할 것을 권고)
 ```
@@ -18,7 +18,7 @@ pip install -r requirements.txt
 ```
 - 설치 과정 중 coviar관련 오류가 발생하시는 분들은 GitHub에서 requirements파일을 다시 다운받아 재설치 해보시기 바랍니다.
 
-__2. 학습 데이터 다운로드__   
+### __2. 학습 데이터 다운로드__ ###   
 
 [다운로드 링크](https://drive.google.com/file/d/1lHP_92tj3pkonEoxwvqD_am7XsePbSl4/view?usp=sharing)   
 --> 이미 LMS로부터 받으신 분은 해당 zip파일 그대로 사용하시면 됩니다. 혹시나 LMS에 전체 데이터가 다 올라가지 않을까 염려되어 링크를 올려둔 것이니, 참고하시기 바랍니다. 데이터.zip파일의 용량은 약 216MB이며, 압축 해제했을 경우엔 756MB 정도의 사이즈를 갖고 있습니다. 확인해보시고 문제 있으시면 다시 다운로드 받아 사용하세요.
@@ -31,7 +31,7 @@ __2. 학습 데이터 다운로드__
 test_img_filelist.txt / test_xml_filelist.txt / trainval_img_filelist.txt / trainval_xml_filelist.txt   
 총 4개의 파일이 생성됐는지 확인
 
-__3. 수정해야 하는 파일들__
+### __3. 수정해야 하는 파일들__ ###
 
 __[Faster RCNN / YOLO 공통]__
 - __경로 설정 시, Window는 "//" 를 Ubuntu에서는 "\\"를 유의해서 사용해주세요.__
@@ -52,8 +52,8 @@ test_path = "[본인 경로에 맞도록 수정(절대경로)]\\data\\test_filel
 ## YOLO requirement
 From (https://github.com/david8862/keras-YOLOv3-model-set)   
 
-__1. YOLO v3 weight(컴퓨터 사양에 따라 YOLOv3-Tiny도 가능) 다운로드__
-__2. Darknet YOLO 모델을 Keras모델로 변경__
+### __1. YOLO v3 weight(컴퓨터 사양에 따라 YOLOv3-Tiny도 가능) 다운로드__ ###
+### __2. Darknet YOLO 모델을 Keras모델로 변경__ ###
 
   ```
   //Ubuntu   
@@ -73,7 +73,7 @@ __2. Darknet YOLO 모델을 Keras모델로 변경__
   
   ```
   
-__3. Annotation 실행하여 본인 경로에 맞는 데이터 셋 설정__
+### __3. Annotation 실행하여 본인 경로에 맞는 데이터 셋 설정__ ###
 
   ```
   python misaeng_annotation.py
@@ -81,16 +81,16 @@ __3. Annotation 실행하여 본인 경로에 맞는 데이터 셋 설정__
   [filepath,x1,y1,x2,y2,class_id]형태로 두 가지 파일을 생성   
   : trainval_misaeng.txt / test_misaeng.txt
   
-__4. 학습진행__
+### __4. 학습진행__ ###
 
   ```
   python train.py --model_type=yolo3_mobilenet_lite --anchors_path=configs/yolo3_anchors.txt --annotation_file=trainval_misaeng.txt --classes_path=configs/misaeng_classes.txt --eval_online --save_eval_checkpoint --val_annotation_file=test_misaeng.txt
   ```
-__5. 성능 확인__   
+### __5. 성능 확인__ ###   
 
   "--val_annotation_file" 옵션으로 테스트 데이터를 제공한 경우, 자동으로 학습이 끝난 후 네트워크 평가 진행
   
-__6. Tensorboard 확인__   
+### __6. Tensorboard 확인__ ###   
 
    학습 과정 중 일어난 Loss변화 또는 학습 변화를 확인하고 싶을 때는 results/classes폴더 내의 이미지, html파일을 확인할수 있으며,
    logs/000/train(validation)폴더 안에 있는 tensorboard 파일로 변화율을 확인할 수 있음
@@ -105,7 +105,7 @@ __6. Tensorboard 확인__
 ## Faster RCNN
 From (https://github.com/kbardool/keras-frcnn)
 
-__1. Annotation 실행하여 본인 경로에 맞는 데이터 셋 설정(YOLO와 형식이 다르므로 한번 더 수행)__   
+### __1. Annotation 실행하여 본인 경로에 맞는 데이터 셋 설정(YOLO와 형식이 다르므로 한번 더 수행)__ ###   
 
    ```
    python misaeng_annotation.py
@@ -114,13 +114,13 @@ __1. Annotation 실행하여 본인 경로에 맞는 데이터 셋 설정(YOLO�
    [filepath,x1,y1,x2,y2,class_name]형태로 두 가지 파일을 생성
    trainval_misaeng.txt / test_misaeng.txt 파일을 생성 
 
-__2. 학습__   
+### __2. 학습__ ###   
 
    ```
    python train_frcnn.py -p trainval_misaeng.txt
    ```
 
-__3. 평가__   
+### __3. 평가__ ###   
 
    ```
    python measure_map.py -o simple -p [TEST데이터]
@@ -138,8 +138,9 @@ python test_frcnn.py -p [절대경로]/test_img
 ```
 __다음 명령어를 통해 실제 Visualize한 탐지 결과(results_imgs 내 이미지)를 얻으실 수 있습니다.__
 
-__4. Tensorboard 확인__   
-   학습 과정 중 일어난 Loss변화를 확인하고 싶을 때는 logs/frcnn 폴더 안에 있는 tensorboard 파일로 변화율을 확인할 수 있음
+### __4. Tensorboard 확인__ ###   
+
+학습 과정 중 일어난 Loss변화를 확인하고 싶을 때는 logs/frcnn 폴더 안에 있는 tensorboard 파일로 변화율을 확인할 수 있음
    ```
    tensorboard --logdir=logs/frcnn
    ```
