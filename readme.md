@@ -3,6 +3,11 @@ Faster RCNN , Yolo v3를 사용한 인물 탐지
 
 # requirement
 
+__0. 파이참 로딩__   
+파이참 로딩 때 간혹 빈 프로젝트를 생성하고, 코드를 엎어씌우는 과정에서 오류가 나시는 분들이 있습니다.
+프로젝트를 따로 만들지 않고, Pycharm > File > Open 탭으로 프로젝트를 열거나 터미널 상에서 접근하시면 큰 오류가 없을 것 같습니다.
+
+
 __1. 필요 라이브러리 설치__   
 ( YOLO와 Faster RCNN이 서로 다른 Tensorflow버전 상에 동작하므로 
 각기 다른 conda 환경을 만들어 동작할 것을 권고)
@@ -12,15 +17,14 @@ pip install -r requirements.txt
 __2. 학습 데이터 다운로드__   
 
 [다운로드 링크](https://drive.google.com/file/d/1lHP_92tj3pkonEoxwvqD_am7XsePbSl4/view?usp=sharing)   
---> 이미 LMS로부터 받으신 분은 해당 zip파일 그대로 사용하시면 됩니다. 혹시나 LMS에 전체 데이터가 다 올라가지 않을까 염려되어 링크를 올려둔 것이니, 참고하시기 바랍니다.   
-데이터.zip파일의 용량은 약 216MB이며, 압축 해제했을 경우엔 756MB 정도의 사이즈를 갖고 있습니다. 확인해보시고 문제 있으시면 다시 다운로드 받으세요.
+--> 이미 LMS로부터 받으신 분은 해당 zip파일 그대로 사용하시면 됩니다. 혹시나 LMS에 전체 데이터가 다 올라가지 않을까 염려되어 링크를 올려둔 것이니, 참고하시기 바랍니다.데이터.zip파일의 용량은 약 216MB이며, 압축 해제했을 경우엔 756MB 정도의 사이즈를 갖고 있습니다. 확인해보시고 문제 있으시면 다시 다운로드 받아 사용하세요.
 
 - xml, img 리스트 파일 생성
 ```
  # Data폴더 내 python 파일 130 - 135라인에 대하여 본인 경로로 수정 후
  python make_file_list.py
  ```
-test_img_filelist.txt / test_xml_filelist.txt/trainval_img_filelist.txt / trainval_xml_filelist.txt   
+test_img_filelist.txt / test_xml_filelist.txt / trainval_img_filelist.txt / trainval_xml_filelist.txt   
 총 4개의 파일이 생성됐는지 확인
 
 __3. 수정해야 하는 파일들__
