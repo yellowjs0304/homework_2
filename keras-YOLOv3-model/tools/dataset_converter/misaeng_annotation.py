@@ -6,10 +6,10 @@ import cv2
 
 # 파일 경로 입력
 classes = ['geurae','sangsik','baekki','youngyi','dongsik']
-train_path="C:\\Users\\JSHwang\\Desktop\\2020-2TA\\ML_Chapter_2\\data\\trainval_filelist.txt"
+train_path="C:\\Users\\JSHwang\\Desktop\\2020-2TA\\ML_Chapter_2\\data\\trainval_xml_filelist.txt"
 imgsets_path_trainval = "C:\\Users\\JSHwang\\Desktop\\2020-2TA\\ML_Chapter_2\\data\\trainval_img"
 imgsets_path_test = "C:\\Users\\JSHwang\\Desktop\\2020-2TA\\ML_Chapter_2\\data\\test_img"
-test_path = "C:\\Users\\JSHwang\\Desktop\\2020-2TA\\ML_Chapter_2\\data\\test_filelist.txt"
+test_path = "C:\\Users\\JSHwang\\Desktop\\2020-2TA\\ML_Chapter_2\\data\\test_xml_filelist.txt"
 
 def convert_annotation(TYPE):
 
