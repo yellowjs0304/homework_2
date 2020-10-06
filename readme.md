@@ -40,10 +40,10 @@ __[Faster RCNN / YOLO 공통]__
 
 - ./misaeng_annotation.py 9-13라인 수정
 ```
-train_path="[본인 경로에 맞도록 수정(절대경로)]\\data\\trainval_filelist.txt"
+train_path="[본인 경로에 맞도록 수정(절대경로)]\\data\\trainval_xml_filelist.txt"
 imgsets_path_trainval = "[본인 경로에 맞도록 수정(절대경로)]\\data\\trainval_img"
 imgsets_path_test = "[본인 경로에 맞도록 수정(절대경로)]\\data\\test_img"
-test_path = "[본인 경로에 맞도록 수정(절대경로)]\\data\\test_filelist.txt"
+test_path = "[본인 경로에 맞도록 수정(절대경로)]\\data\\test_xml_filelist.txt"
 ```
 - __간혹, 이미지를 로딩할때 (cv2.imread()) 등 NoneType에러가 나는 경우가 있는데 대다수 한글이 포함된 경로를 사용할 때 에러가 납니다. 코드 및 데이터 로딩 시 한글이 포함되지 않은 경로를 사용해주세요.__
 
