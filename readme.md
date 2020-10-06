@@ -113,7 +113,7 @@ From (https://github.com/kbardool/keras-frcnn)
    python misaeng_annotation.py
    ```
 
-   [filepath,x1,y1,x2,y2,class_name]형태로 두 가지 파일을 생성
+   [filepath,x1,y1,x2,y2,class_name]형태로 두 가지 파일을 생성   
    trainval_misaeng.txt / test_misaeng.txt 파일을 생성   
    
    - __만약 Class name이 아니라 0-4에 해당되는 숫자값으로 생성됐을 경우, GitHub에 있는 misaeng_annotation.py 파일로 변경해보시고 다시 사용해보시기 바랍니다. LMS에 올렸던 코드에서 한번 업데이트가 있던 코드라 차이가 있을 수 있습니다.__
