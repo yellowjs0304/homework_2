@@ -14,6 +14,8 @@ __1. 필요 라이브러리 설치__
 ```
 pip install -r requirements.txt
 ```
+- 설치 과정 중 coviar관련 오류가 발생하시는 분들은 GitHub에서 requirements파일을 다시 다운받아 재설치 해보시기 바랍니다.
+
 __2. 학습 데이터 다운로드__   
 
 [다운로드 링크](https://drive.google.com/file/d/1lHP_92tj3pkonEoxwvqD_am7XsePbSl4/view?usp=sharing)   
@@ -42,6 +44,8 @@ test_path = "[본인 경로에 맞도록 수정(절대경로)]\\data\\test_filel
 - __간혹, 이미지를 로딩할때 (cv2.imread()) 등 NoneType에러가 나는 경우가 있는데 대다수 한글이 포함된 경로를 사용할 때 에러가 납니다. 코드 및 데이터 로딩 시 한글이 포함되지 않은 경로를 사용해주세요.__
 
 - __각 모델 별 설정된 하이퍼 파라미터는 테스트 용으로 기입된 숫자이며, 절대 잘 되는 모델을 위한 하이퍼 파라미터가 아닙니다.본인 컴퓨터 사양에 맞춰 여러 번 실험해보고 최고의 성능을 내는 하이퍼 파라미터를 결정한 후, 실험에 사용하시기 바랍니다.__
+
+------------
 
 ## YOLO requirement
 From (https://github.com/david8862/keras-YOLOv3-model-set)   
@@ -94,7 +98,8 @@ __6. Tensorboard 확인__
    
    [환경 라이브러리 정보] : library.txt파일에 기입되어 있음
 
-  
+------------
+
 ## Faster RCNN
 From (https://github.com/kbardool/keras-frcnn)
 
