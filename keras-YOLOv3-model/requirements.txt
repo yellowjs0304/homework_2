@@ -8,7 +8,6 @@ bokeh==2.2.1
 cachetools==4.1.1
 certifi==2020.6.20
 chardet==3.0.4
-coremltools==3.4
 cycler==0.10.0
 Cython==0.29.21
 decorator==4.4.2
