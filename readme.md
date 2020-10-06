@@ -17,6 +17,8 @@ __수정된 코드가 있으므로, LMS에서 다운받은 코드가 아닌 GitH
 pip install -r requirements.txt
 ```
 - 설치 과정 중 coviar관련 오류가 발생하시는 분들은 GitHub에서 requirements파일을 다시 다운받아 재설치 해보시기 바랍니다.
+- python은 두 모델 모두 3.6버전을 사용하시기 바랍니다.   
+- tensorboard나 tensorflow estimator 오류는 오류문구에 언급된대로 1.x 버전으로 낮춰서 재설치해보시기 바랍니다.   
 
 ### __2. 학습 데이터 다운로드__ ###   
 
