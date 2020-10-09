@@ -38,6 +38,7 @@ test_img_filelist.txt / test_xml_filelist.txt / trainval_img_filelist.txt / trai
 
 __[Faster RCNN / YOLO 공통]__
 - __경로 설정 시, Window는 "//" 를 Ubuntu에서는 "\\"를 유의해서 사용해주세요.__
+- __이때, Windows와 Ubuntu에 따라서 misaeng_annotation.py파일의 46-47번째 라인 .split('/') 구문과 .split('\\')구문을 같이 변경해주셔야 합니다.__
 
 - ./misaeng_annotation.py 9-13라인 수정
 ```
