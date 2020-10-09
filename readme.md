@@ -37,20 +37,18 @@ test_img_filelist.txt / test_xml_filelist.txt / trainval_img_filelist.txt / trai
 ### __3. 수정해야 하는 파일들__ ###
 
 __[Faster RCNN / YOLO 공통]__
-- __경로 설정 시, Window는 "\\\\" 를 Ubuntu에서는 "/"를 유의해서 사용해주세요.__
-- __이때, Windows와 Ubuntu에 따라서 misaeng_annotation.py파일의 46-47번째 라인 .split('\\\\') 구문과 .split('/')구문을 같이 변경해주셔야 합니다.__
-
-- ./misaeng_annotation.py 9-13라인 수정
+- misaeng_annotation.py 9-13라인 수정
 ```
 train_path="[본인 경로에 맞도록 수정(절대경로)]\\data\\trainval_xml_filelist.txt"
 imgsets_path_trainval = "[본인 경로에 맞도록 수정(절대경로)]\\data\\trainval_img"
 imgsets_path_test = "[본인 경로에 맞도록 수정(절대경로)]\\data\\test_img"
 test_path = "[본인 경로에 맞도록 수정(절대경로)]\\data\\test_xml_filelist.txt"
 ```
-- __간혹, 이미지를 로딩할때 (cv2.imread()) 등 NoneType에러가 나는 경우가 있는데 대다수 한글이 포함된 경로를 사용할 때 에러가 납니다. 코드 및 데이터 로딩 시 한글이 포함되지 않은 경로를 사용해주세요.__
-
-- __각 모델 별 설정된 하이퍼 파라미터는 테스트 용으로 기입된 숫자이며, 절대 잘 되는 모델을 위한 하이퍼 파라미터가 아닙니다.본인 컴퓨터 사양에 맞춰 여러 번 실험해보고 최고의 성능을 내는 하이퍼 파라미터를 결정한 후, 실험에 사용하시기 바랍니다.__   
-- __코드를 실행할 때 너무 오래걸리거나 CPU, GPU용량이 부족할 경우 YOLO는 batch size를 줄이거나 Tiny-yolo를 고, FasterRCNN은 RoI의 수를 낮추거나 epoch_lengths, num_epoch등을 줄여 돌리시기 바랍니다.__   
+- 경로 설정 시, Window는 "\\\\" 를 Ubuntu에서는 "/"를 유의해서 사용해주세요.
+- 이때, Windows와 Ubuntu에 따라서 misaeng_annotation.py파일의 46-47번째 라인 .split('\\\\') 구문과 .split('/')구문을 같이 변경해주셔야 합니다.
+- 간혹, 이미지를 로딩할때 (cv2.imread()) 등 NoneType에러가 나는 경우가 있는데 대다수 한글이 포함된 경로를 사용할 때 에러가 납니다. 코드 및 데이터 로딩 시 한글이 포함되지 않은 경로를 사용해주세요.
+- 각 모델 별 설정된 하이퍼 파라미터는 테스트 용으로 기입된 숫자이며, 절대 잘 되는 모델을 위한 하이퍼 파라미터가 아닙니다.본인 컴퓨터 사양에 맞춰 여러 번 실험해보고 최고의 성능을 내는 하이퍼 파라미터를 결정한 후, 실험에 사용하시기 바랍니다.   
+- 코드를 실행할 때 너무 오래걸리거나 CPU, GPU용량이 부족할 경우 YOLO는 batch size를 줄이거나 Tiny-yolo를 고, FasterRCNN은 RoI의 수를 낮추거나 epoch_lengths, num_epoch등을 줄여 돌리시기 바랍니다.   
 
 ------------
 
