@@ -225,7 +225,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     # Model definition options
     parser.add_argument('--model_type', type=str, required=False, default='yolo3_mobilenet_lite',
-        help='YOLO model type: yolo3_mobilenet_lite/tiny_yolo3_mobilenet/yolo3_darknet/..., default=%(default)s')
+        help='YOLO model type: yolo3_mobilenet_lite/tiny_yolo3_mobilenet/yolo3_darknet/..., default=%(default)s :: yolo3_mobilenet_lit or yolo3_vgg16')
     parser.add_argument('--anchors_path', type=str, required=False, default=os.path.join('configs', 'yolo3_anchors.txt'),
         help='path to anchor definitions, default=%(default)s')
     parser.add_argument('--model_image_size', type=str, required=False, default='416x416',
