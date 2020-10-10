@@ -1,6 +1,7 @@
 # Character_detection
 Faster RCNN , Yolo v3를 사용한 인물 탐지   
-__수정된 코드가 있으므로, LMS에서 다운받은 코드가 아닌 GitHub에서 코드를 재 다운로드 하여 사용해주세요__
+__수정된 코드가 있으므로, LMS에서 다운받은 코드가 아닌 GitHub에서 코드를 재 다운로드 하여 사용해주세요__   
+__지속적으로 GitHub readme를 업데이트 하고 있습니다. 오류가 생기면 우선 Readme를 한번 읽어보시고, 질문 주시면 되겠습니다.__
 
 
 # requirement
@@ -126,7 +127,11 @@ From (https://github.com/kbardool/keras-frcnn)
    ```
    python train_frcnn.py -p trainval_misaeng.txt
    ```
-
+   - FRCNN의 batch size는 epoch length에 의거하여 변경됩니다. 즉, epoch length를 설정하는 것이 batch size를 결정하는 것과 동일합니다.   
+   - epoch length = "전체 train data set 개수 // batch size " 입니다.   
+   ex) 전체 train 개수 30000개라 가정했을 때, batch size가 10일 경우 epoch length는 300으로 설정하시면 됩니다.   
+   - misaeng 학습 데이터 개수는 train_frcnn.py를 실행했을 때 cmd창에 명시되는 Num train samples 값을 사용하시면 되겠습니다.   
+   
 ### __3. 평가__ ###   
 
    ```
