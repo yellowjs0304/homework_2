@@ -17,7 +17,7 @@ __지속적으로 GitHub readme를 업데이트 하고 있습니다. 오류가 �
 ```
 pip install -r requirements.txt
 ```
-- 설치 과정 중 coviar, mnn, tfcoreml 관련 오류가 발생하시는 분들은 GitHub에서 requirements파일을 다시 다운받거나 해당 라인을 지우고 재설치 해보시기 바랍니다.   
+- 설치 과정 중 coviar, mnn, tfcoreml, pycocotools 관련 오류가 발생하시는 분들은 GitHub에서 requirements파일을 다시 다운받거나 해당 라인을 지우고 재설치 해보시기 바랍니다.   
 - tfcoreml은 tensorflow버전에 맞춰서 설치하셔도 됩니다.   
 - python은 두 모델 모두 3.6버전을 사용하시기 바랍니다.   
 - YOLO는 텐서플로 2.3.0을 Frcnn은 1.12.0(또는 1.14.0)을 사용하면 되며, GPU 유무에 따라 requirements 파일에서 "-gpu"를 삭제, 추가하실 수 있습니다.   
