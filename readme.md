@@ -1,7 +1,7 @@
 # Character_detection
 Faster RCNN , Yolo v3를 사용한 인물 탐지   
 __수정된 코드가 있으므로, LMS에서 다운받은 코드가 아닌 GitHub에서 코드를 재 다운로드 하여 사용해주세요__   
-__지속적으로 GitHub readme를 업데이트 하고 있습니다. 오류가 생기면 우선 Readme를 한번 읽어보시고, 질문 주시면.__
+__지속적으로 GitHub readme를 업데이트 하고 있습니다. 오류가 생기면 우선 Readme를 한번 읽어보시고, 질문 주시면 감사하겠습니다.__
 
 
 # requirement
