@@ -51,6 +51,8 @@ test_path = "[본인 경로에 맞도록 수정(절대경로)]\\data\\test_xml_f
 - 각 모델 별 설정된 하이퍼 파라미터는 테스트 용으로 기입된 숫자이며, 절대 잘 되는 모델을 위한 하이퍼 파라미터가 아닙니다.본인 컴퓨터 사양에 맞춰 여러 번 실험해보고 최고의 성능을 내는 하이퍼 파라미터를 결정한 후, 실험에 사용하시기 바랍니다.   
 - 코드를 실행할 때 너무 오래걸리거나 CPU, GPU용량이 부족할 경우 YOLO는 batch size를 줄이거나 Tiny-yolo를 고, FasterRCNN은 RoI의 수를 낮추거나 epoch_lengths, num_epoch등을 줄여 돌리시기 바랍니다.   
 
+- 3번 과제를 위해 두 모델의 CNN을 동일하게 할 시에는 양쪽 모두 지원하는 vgg를 사용하면 됩니다.   
+- frcnn에서는 train_frcnn.py 의 28번 라인에서 default를 vgg로 변경하시고, YOLO는 228번 라인에서 yolo3_vgg16을 명시하면 됩니다.   
 ------------
 
 ## YOLO requirement
