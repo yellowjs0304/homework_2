@@ -93,6 +93,9 @@ From (https://github.com/david8862/keras-YOLOv3-model-set)
   # YOLO_ANCHOR_TXT는 YOLO모델에 따라 다름 = Tiny YOLO의 Anchor개수 : 6 / YOLOv3 개수 : 9개
   python train.py --model_type=yolo3_mobilenet_lite --anchors_path=configs/[YOLO_ANCHOR_TXT] --annotation_file=[TRAIN_DATA_FILE] --classes_path=configs/[CLASS_FILE_TXT] --eval_online --save_eval_checkpoint --val_annotation_file=[TEST_DATA_FILE]
   ex) python train.py --model_type=yolo3_mobilenet_lite --anchors_path=configs/yolo3_anchors.txt --annotation_file=trainval_misaeng.txt --classes_path=configs/misaeng_classes.txt --eval_online --save_eval_checkpoint --val_annotation_file=test_misaeng.txt
+  
+  TINY Model의 경우, 명령어 예제
+  ex) python train.py --model_type=tiny_yolo3_mobilenet_lite --anchors_path=configs/yolo3_anchors.txt --annotation_file=trainval_misaeng.txt --classes_path=configs/misaeng_classes.txt --eval_online --save_eval_checkpoint --val_annotation_file=test_misaeng.txt
   ```
 ### __5. 성능 확인__ ###   
 
