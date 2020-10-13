@@ -98,6 +98,16 @@ From (https://github.com/david8862/keras-YOLOv3-model-set)
 
   "--val_annotation_file" 옵션으로 테스트 데이터를 제공한 경우, 자동으로 학습이 끝난 후 네트워크 평가 진행
   
+  __만약, mAP계산 외에 추가적으로 실제 모델의 탐지 결과를 확인하고 싶을 땐__
+```
+python yolo.py --model_type=yolo3_mobilenet_lite --weights_path=[MODEL_NAME] --anchors_path=configs/[ANCHOR_FILE] --classes_path=configs/misaeng_classes.txt --model_image_size=416x416 --image
+
+ex) python yolo.py --model_type=yolo3_mobilenet_lite --weights_path=model.h5 --anchors_path=configs/yolo3_anchors.txt --classes_path=configs/voc_classes.txt --model_image_size=416x416 --image
+
+이후, cmd창에 image path를 입력
+```
+__다음 명령어를 통해 실제 Visualize한 탐지 결과(results_imgs 내 이미지)를 얻으실 수 있습니다.__
+
 ### __6. Tensorboard 확인__ ###   
 
    학습 과정 중 일어난 Loss변화 또는 학습 변화를 확인하고 싶을 때는 results/classes폴더 내의 이미지, html파일을 확인할수 있으며,
@@ -107,6 +117,7 @@ From (https://github.com/david8862/keras-YOLOv3-model-set)
    ```
    
    [환경 라이브러리 정보] : library.txt파일에 기입되어 있음
+
 
 ------------
 
