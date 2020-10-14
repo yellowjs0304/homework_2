@@ -16,6 +16,8 @@ __지속적으로 GitHub readme를 업데이트 하고 있습니다. 오류가 �
 - FileNotFoundError: [Errono 2] No such file or directory: 'C:\\Users\\JSHwang\\...\\...jpg'   
 : misaeng_annotation.py의 결과로 생성된 trainval_misaeng, test_misaeng파일이 Yolo, Keras 폴더 바로 아래에 존재해야 함. 즉, train.py 코드와 동일한 위치   
 
+- GPU를 쓸 때는 각자의 Nvidia 그래픽 드라이버에 맞춰서 CUDA와 CuDNN을 설치해주셔야 하며, CUDA 10.1, cuDNN은 7.6대를 쓰시면 됩니다.   
+
 # Requirement
 
 ### __0. 파이참 로딩__ ###   
