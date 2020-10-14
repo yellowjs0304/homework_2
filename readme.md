@@ -3,8 +3,15 @@ Faster RCNN , Yolo v3를 사용한 인물 탐지
 __수정된 코드가 있으므로, LMS에서 다운받은 코드가 아닌 GitHub에서 코드를 재 다운로드 하여 사용해주세요__   
 __지속적으로 GitHub readme를 업데이트 하고 있습니다. 오류가 생기면 우선 Readme를 한번 읽어보시고, 질문 주시면 감사하겠습니다.__
 
+### 자주 질문하는 오류(이외에도 아래 readme 전체를 자세히 읽으시면 관련 내용이 있습니다)   
 
-# requirement
+- simple_parser.py", line 37, in get_data (rows,cols) = img.shape[:2] AttributeError: 'NoneType' object has no attribute 'shape'   
+: 한글 경로, misaeng_annotation.py에서 .split함수 미수정, 경로 오류(\\\\, / 등)   
+
+- FileNotFoundError: [Errono 2] No such file or directory: 'C:\\Users\\JSHwang\\...\\...jpg'   
+: misaeng_annotation.py의 결과로 생성된 trainval_misaeng, test_misaeng파일이 Yolo, Keras 폴더 바로 아래에 존재해야 함. 즉, train.py 코드와 동일한 위치   
+
+# Requirement
 
 ### __0. 파이참 로딩__ ###   
 파이참 로딩 때 간혹 빈 프로젝트를 생성하고, 코드를 엎어씌우는 과정에서 오류가 나시는 분들이 있습니다.
@@ -38,7 +45,8 @@ test_img_filelist.txt / test_xml_filelist.txt / trainval_img_filelist.txt / trai
 ### __3. 수정해야 하는 파일들__ ###
 
 __[Faster RCNN / YOLO 공통]__
-- misaeng_annotation.py 9-13라인 수정
+- misaeng_annotation.py 9-13라인 수정   
+(YOLO의 경우, tools/model_converter폴더 내에 있습니다)
 ```
 train_path="[본인 경로에 맞도록 수정(절대경로)]\\data\\trainval_xml_filelist.txt"
 imgsets_path_trainval = "[본인 경로에 맞도록 수정(절대경로)]\\data\\trainval_img"
@@ -50,7 +58,6 @@ test_path = "[본인 경로에 맞도록 수정(절대경로)]\\data\\test_xml_f
 - 간혹, 이미지를 로딩할때 (cv2.imread()) 등 NoneType에러가 나는 경우가 있는데 대다수 한글이 포함된 경로를 사용할 때 에러가 납니다. 코드 및 데이터 로딩 시 한글이 포함되지 않은 경로를 사용해주세요.
 - 각 모델 별 설정된 하이퍼 파라미터는 테스트 용으로 기입된 숫자이며, 절대 잘 되는 모델을 위한 하이퍼 파라미터가 아닙니다.본인 컴퓨터 사양에 맞춰 여러 번 실험해보고 최고의 성능을 내는 하이퍼 파라미터를 결정한 후, 실험에 사용하시기 바랍니다.   
 - 코드를 실행할 때 너무 오래걸리거나 CPU, GPU용량이 부족할 경우 YOLO는 batch size를 줄이거나 Tiny-yolo를 고, FasterRCNN은 RoI의 수를 낮추거나 epoch_lengths, num_epoch등을 줄여 돌리시기 바랍니다.   
-
 - 3번 과제를 위해 원래는 두 모델 다 동일한 CNN을 사용하는 것이 옳으나, 베이스라인 코드의 문제로 각기 다른 CNN으로 수행하셔도 됩니다.   
 추후, 문제가 해결되면 Readme를 업데이트하겠습니다.
 ------------
@@ -59,7 +66,9 @@ test_path = "[본인 경로에 맞도록 수정(절대경로)]\\data\\test_xml_f
 From (https://github.com/david8862/keras-YOLOv3-model-set)   
 
 ### __1. YOLO v3 weight(컴퓨터 사양에 따라 YOLOv3-Tiny도 가능) 다운로드__ ###
-### __2. Darknet YOLO 모델을 Keras모델로 변경__ ###
+### __2. Darknet YOLO 모델을 Keras모델로 변경__ ###   
+
+- 다운 받은 weight파일을 weights폴더에 복사   
 
   ```
   //Ubuntu   
