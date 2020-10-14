@@ -7,6 +7,11 @@ __지속적으로 GitHub readme를 업데이트 하고 있습니다. 오류가 �
 
 - simple_parser.py", line 37, in get_data (rows,cols) = img.shape[:2] AttributeError: 'NoneType' object has no attribute 'shape'   
 : 한글 경로, misaeng_annotation.py에서 .split함수 미수정, 경로 오류(\\\\, / 등)   
+: Ubuntu를 사용하시는 분들은 자동 공백제거가 안되서, Image를 못 읽으시는 경우가 있습니다. FRCNN안에 misaeng_annotation.py에서 상단 코드의 공백을 아래와 같이 삭제해주시면 해당 오류를 삭제하실 수 있습니다.
+```
+            기존 : list_file.write(os.path.join(imgsets_path, line.split('/')[-1][:-4]+"jpg ,")) 
+            변경 : list_file.write(os.path.join(imgsets_path, line.split('/')[-1][:-4]+"jpg,"))
+```
 
 - FileNotFoundError: [Errono 2] No such file or directory: 'C:\\Users\\JSHwang\\...\\...jpg'   
 : misaeng_annotation.py의 결과로 생성된 trainval_misaeng, test_misaeng파일이 Yolo, Keras 폴더 바로 아래에 존재해야 함. 즉, train.py 코드와 동일한 위치   
