@@ -152,7 +152,7 @@ From (https://github.com/kbardool/keras-frcnn)
    ```
    python train_frcnn.py -p trainval_misaeng.txt
    ```
-   - FRCNN의 batch size는 epoch length에 의거하여 변경됩니다. 즉, epoch length를 설정하는 것이 batch size를 결정하는 것과 동일합니다.   
+   - FRCNN의 batch size는 epoch length에 의거하여 변경됩니다. 즉, epoch length를 설정하는 것이 batch size를 결정하는 것과 동일한 역할을 합니다.   
    - epoch length = "전체 train data set 개수 // batch size " 입니다.   
    ex) 전체 train 개수 3000개라 가정했을 때, batch size가 10일 경우 epoch length는 300으로 설정하시면 됩니다.   
    - misaeng 학습 데이터 개수는 train_frcnn.py를 실행했을 때 cmd창에 명시되는 Num train samples 값을 사용하시면 되겠습니다.   
