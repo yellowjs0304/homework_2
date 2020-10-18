@@ -55,7 +55,7 @@ test_img_filelist.txt / test_xml_filelist.txt / trainval_img_filelist.txt / trai
 
 __[Faster RCNN / YOLO 공통]__
 - misaeng_annotation.py 9-13라인 수정   
-(YOLO의 경우, tools/model_converter폴더 내에 있습니다)
+(YOLO의 경우, tools/dataset_converter폴더 내에 있습니다)
 ```
 train_path="[본인 경로에 맞도록 수정(절대경로)]\\data\\trainval_xml_filelist.txt"
 imgsets_path_trainval = "[본인 경로에 맞도록 수정(절대경로)]\\data\\trainval_img"
